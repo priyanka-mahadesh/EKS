@@ -4,7 +4,7 @@ metadata:
   name: nginx-ingress
 spec:
   rules:
-  - host: 204.236.194.18
+  - host: ec2-204-236-194-18.compute-1.amazonaws.com
     http:
       paths:
       - path: /

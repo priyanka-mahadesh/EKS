@@ -1,12 +1,12 @@
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: priyanka-hpa
+  name: priyanka
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: priyanka-hpa
+    name: priyanka
   minReplicas: 1
   maxReplicas: 2
   metrics:

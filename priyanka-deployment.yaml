@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: priyanka-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: priyanka-pod-nginx
+  template:
+    metadata:
+      labels:
+        app: priyanka-pod-nginx
+    spec:
+      containers:
+      - name: priyanka-container
+        image: dockerfile

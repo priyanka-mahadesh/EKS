@@ -1,26 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: pv-nginx-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nginx
+      app: pv-nginx
   template:
     metadata:
       labels:
-        app: nginx
+        app: pv-nginx
     spec:
       containers:
-      - name: nginx
+      - name: pv-nginx-container
         image: nginx
         ports:
         - containerPort: 80
         volumeMounts:
-        - name: priyanka-pv
-          mountPath: "/usr/share/nginx/html"
-  volumes:
-  - name: priyanka-pv
-    persistentVolumeClaim:
-      claimName: priyanka-pv
+        - name: pv-nginx-volume
+          mountPath: /usr/share/nginx/html
+      volumes:
+      - name: pv-nginx-volume
+        persistentVolumeClaim:
+          claimName: pv-nginx-pvc
